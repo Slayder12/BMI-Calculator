@@ -15,6 +15,7 @@
         android:text="@string/title_text"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:textAlignment="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +48,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:background="@drawable/edittext_border"
+            android:textColor="@color/black"
             android:hint="@string/weight_input_text"
             android:inputType="number"
             android:textAlignment="center" />
@@ -68,6 +70,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:background="@drawable/edittext_border"
+            android:textColor="@color/black"
             android:hint="@string/height_input_text"
             android:inputType="number"
             android:textAlignment="center"/>
