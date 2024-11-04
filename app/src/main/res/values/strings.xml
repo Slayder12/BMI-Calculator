@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="title_text">Калькулятор \nиндекса массы тела</string>
+    <string name="weight_input_text">Введите рост (см)</string>
+    <string name="height_input_text">Введите вес (кг)</string>
+    <string name="calculate_text">Расчитать</string>
+    <string name="weight_text">Рост:</string>
+    <string name="height_text">Вес:</string>
+    <string name="validate_input_text">Пожалуйста, введите правильные значения</string>
+    <string name="input_data_text">Введите данные</string>
+</resources>
