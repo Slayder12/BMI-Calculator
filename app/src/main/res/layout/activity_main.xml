@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.3">
 
         <TextView
-            android:id="@+id/weightTextTV"
+            android:id="@+id/heightTextTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/weight_text"
@@ -54,7 +54,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/heightTextTV"
+            android:id="@+id/weightTextTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/height_text"

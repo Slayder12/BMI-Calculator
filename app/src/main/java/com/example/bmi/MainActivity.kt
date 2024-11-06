@@ -1,5 +1,6 @@
 package com.example.bmi
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -22,20 +23,14 @@ class MainActivity : AppCompatActivity() {
         calculateBTN = findViewById(R.id.calculateBTN)
 
         calculateBTN.setOnClickListener {
-            if (!Operation().inputValidation(weightET, heightET)) return@setOnClickListener
+            if (!Operation().inputValidation(this, weightET, heightET)) return@setOnClickListener
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("weight", weightET.text.toString())
             intent.putExtra("height", heightET.text.toString())
             launchActivity.launch(intent)
         }
 
-        weightET.setOnClickListener() {
-            weightET.setText("")
-        }
-
-        heightET.setOnClickListener() {
-            heightET.setText("")
-        }
+        Operation().cleanET(weightET, heightET)
 
     }
 

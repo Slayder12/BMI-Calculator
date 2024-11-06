@@ -6,6 +6,9 @@
     <string name="calculate_text">Расчитать</string>
     <string name="weight_text">Рост:</string>
     <string name="height_text">Вес:</string>
-    <string name="validate_input_text">Пожалуйста, введите правильные значения</string>
+    <string name="validate_input_height_text">Введите рост в диапазоне от 50 до 250</string>
+    <string name="validate_input_weight_text">Введите вес в диапазоне от 5 до 500</string>
     <string name="input_data_text">Введите данные</string>
+    <string name="input_data_height_text">Введите рост</string>
+    <string name="input_data_weight_text">Введите вес</string>
 </resources>

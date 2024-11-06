@@ -1,5 +1,6 @@
 package com.example.bmi
 
+import android.content.Context
 import android.widget.EditText
 import android.widget.Toast
 import java.text.DecimalFormat
@@ -13,27 +14,66 @@ class Operation {
         return result
     }
     
-    fun inputValidation(inputWeight: EditText, inputHeight: EditText): Boolean {
-        val w = inputWeight.text.toString()
-        val h = inputHeight.text.toString()
-        if (w.isNotEmpty() && h.isNotEmpty()) {
-            val weight = w.toInt()
-            val height = h.toInt()
+    fun inputValidation(context: Context, inputWeight: EditText, inputHeight: EditText): Boolean {
 
-            if (weight in 5..500 && height in 50..250) {
-                return true
-            } else {
-                Toast.makeText(
-                    inputWeight.context,
-                    inputWeight.context.getString(R.string.validate_input_text),
-                    Toast.LENGTH_SHORT).show()
-                return false
-            }
+        val h = inputHeight.text.toString()
+        val w = inputWeight.text.toString()
+        
+        if (w.isEmpty() && h.isNotEmpty()) {
+            Toast.makeText(
+                context,
+                (context.getString(R.string.input_data_height_text)),
+                Toast.LENGTH_SHORT).show()
+            return false
         }
-        Toast.makeText(
-            inputWeight.context,
-            inputWeight.context.getString(R.string.input_data_text), 
-            Toast.LENGTH_SHORT).show()
-        return false
+
+        if (w.isNotEmpty() && h.isEmpty()) {
+            Toast.makeText(
+                context,
+                (context.getString(R.string.input_data_weight_text)),
+                Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if (h.isEmpty() || w.isEmpty()) {
+            Toast.makeText(
+                context,
+                context.getString(R.string.input_data_text),
+                Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        val weight = w.toInt()
+        val height = h.toInt()
+
+        if (height !in 50..250) {
+            Toast.makeText(
+                context,
+                context.getString(R.string.validate_input_height_text),
+                Toast.LENGTH_SHORT)
+                .show()
+            return false
+        }
+
+        if (weight !in 5..500) {
+            Toast.makeText(
+                context,
+                context.getString(R.string.validate_input_weight_text),
+                Toast.LENGTH_SHORT
+            ).show()
+            return false
+        }
+
+        return true
+    }
+
+    fun cleanET(weightET: EditText, heightET: EditText) {
+        weightET.setOnClickListener {
+            weightET.setText("")
+        }
+
+        heightET.setOnClickListener {
+            heightET.setText("")
+        }
     }
 }
