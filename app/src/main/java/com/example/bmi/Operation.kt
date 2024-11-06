@@ -20,11 +20,11 @@ class Operation {
 
         val h = inputHeight.text.toString()
         val w = inputWeight.text.toString()
-        
+
         if (w.isEmpty() && h.isNotEmpty()) {
             Toast.makeText(
                 context,
-                (context.getString(R.string.input_data_height_text)),
+                (context.getString(R.string.input_data_weight_text)),
                 Toast.LENGTH_SHORT).show()
             return false
         }
@@ -32,7 +32,7 @@ class Operation {
         if (w.isNotEmpty() && h.isEmpty()) {
             Toast.makeText(
                 context,
-                (context.getString(R.string.input_data_weight_text)),
+                (context.getString(R.string.input_data_height_text)),
                 Toast.LENGTH_SHORT).show()
             return false
         }
